@@ -15,33 +15,24 @@ public class Book {
 
     private Integer id;
     private String name;
+    private String publish;
     private String author;
-    private BigDecimal price;
-    private Integer sales;
+    private String num;
     private Integer stock;
     private String imgPath = "static/img/default.jpg";
 
-
-
-    public Book() {
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", publish='" + publish + '\'' +
+                ", author='" + author + '\'' +
+                ", num='" + num + '\'' +
+                ", stock=" + stock +
+                ", imgPath='" + imgPath + '\'' +
+                '}';
     }
-
-
-
-    public Book(Integer id, String name, String author, BigDecimal price, Integer sales, Integer stock, String imgPath) {
-        this.id = id;
-        this.name = name;
-        this.author = author;
-        this.price = price;
-        this.sales = sales;
-        this.stock = stock;
-        //要求给的图书封面路径不能为空。
-        if (imgPath != null && !"".equals(imgPath)) {
-            this.imgPath = imgPath;
-        }
-    }
-
-
 
     public Integer getId() {
         return id;
@@ -59,6 +50,14 @@ public class Book {
         this.name = name;
     }
 
+    public String getPublish() {
+        return publish;
+    }
+
+    public void setPublish(String publish) {
+        this.publish = publish;
+    }
+
     public String getAuthor() {
         return author;
     }
@@ -67,20 +66,12 @@ public class Book {
         this.author = author;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public String getNum() {
+        return num;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public Integer getSales() {
-        return sales;
-    }
-
-    public void setSales(Integer sales) {
-        this.sales = sales;
+    public void setNum(String num) {
+        this.num = num;
     }
 
     public Integer getStock() {
@@ -96,24 +87,19 @@ public class Book {
     }
 
     public void setImgPath(String imgPath) {
-        //要求给的图书封面路径不能为空。
-        if (imgPath != null && !"".equals(imgPath)) {
-            this.imgPath = imgPath;
-        }
+        this.imgPath = imgPath;
     }
 
+    public Book(Integer id, String name, String publish, String author, String num, Integer stock, String imgPath) {
+        this.id = id;
+        this.name = name;
+        this.publish = publish;
+        this.author = author;
+        this.num = num;
+        this.stock = stock;
+        this.imgPath = imgPath;
+    }
 
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
-                ", price=" + price +
-                ", sales=" + sales +
-                ", stock=" + stock +
-                ", imgPath='" + imgPath + '\'' +
-                '}';
+    public Book() {
     }
 }

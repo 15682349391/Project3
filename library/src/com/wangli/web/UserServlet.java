@@ -61,7 +61,7 @@ public class UserServlet extends BaseServlet {
             //删除用户登录的session
             request.getSession().invalidate();
             //返回首页
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect(request.getContextPath()+ "/index.jsp");
 
         }
         protected void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

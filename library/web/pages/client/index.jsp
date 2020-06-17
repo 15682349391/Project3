@@ -5,12 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>书城首页</title>
+<title>借书首页</title>
 	<%@include file="/pages/common/head.jsp"%>
 	<script type="text/javascript">
 		$(function () {
-
-
 
 			$("button.addToCart").click(function () {
 
@@ -26,7 +24,7 @@
 
 							console.log(data);
 							$("#cartTotalCount").text("您的借书单中有" + data.totalCount + "本书。") ;
-							$("#lastName").html("您刚刚将<span style=\"color: red\" id=\"lastName\">" + data.lastName + "</span>加入到了书单中");
+							$("#lastName").html("您刚刚将<span style=\"color: #ff0000\" id=\"lastName\">" + data.lastName + "</span>加入到了书单中");
 
 						}
 
@@ -56,12 +54,20 @@
 
 			<c:if test="${not empty sessionScope.user}">
 				<span>欢迎<span class="um_span">${sessionScope.user.username}<%--</span>光临尚硅谷书城</span>--%>
-				<a href="pages/order/order.jsp">我的订单</a>
+				<a href="pages/order/order.jsp">我的书单</a>
 				<a id="logout" href="userServlet?action=logout">注销</a>&nbsp;
 			</c:if>
 
 			<a href="pages/cart/cart.jsp">书单</a>
+
+
+
+			<c:if test="${sessionScope.user.username == 'admin'}">
+				<span>当前管理员：<span class="um_span">${sessionScope.user.username}<%--</span>光临尚硅谷书城</span>--%>
 			<a href="pages/manager/manager.jsp">后台管理</a>
+			</c:if>
+
+
 		</div>
 
 	</div>
@@ -69,9 +75,8 @@
 		<div id="book">
 			<div class="book_cond">
 				<form action="client/bookServlet" method="get">
-					<input type="hidden" name="action" value="pageByPrice">
-					价格：<input id="min" type="text" name="min" value="${param.min}"> 元 -
-						<input id="max" type="text" name="max" value="${param.max}"> 元
+					<input type="hidden" name="action" value="pageByName">
+					查找：<input id="search" width="90px" type="text" name="search" value="">
 						<input type="submit" value="查询" />
 				</form>
 			</div>
@@ -80,13 +85,13 @@
 				<c:if test="${empty sessionScope.cart.items}">
 					<span id="cartTotalCount"></span>
 					<div id="lastName">
-						<span style="color: red" >购物车空空如也。。</span>
+						<span style="color: red" >借书单空空如也。。</span>
 					</div>
 				</c:if>
 				<c:if test="${not empty sessionScope.cart.items}">
-					<span id="cartTotalCount">您的购物车中有${sessionScope.cart.totalCount}件商品</span>
+					<span id="cartTotalCount">您的书单中有${sessionScope.cart.totalCount}本书</span>
 					<div id="lastName">
-						您刚刚将<span style="color: red" id="lastName">${sessionScope.lastName}</span>加入到了购物车中
+						您刚刚将<span style="color: red" id="lastName">${sessionScope.lastName}</span>加入到了书单中
 					</div>
 				</c:if>
 			</div>
@@ -107,19 +112,19 @@
 						<span class="sp2">${book.author}</span>
 					</div>
 					<div class="book_price">
-						<span class="sp1">价格:</span>
-						<span class="sp2">￥${book.price}</span>
+						<span class="sp1">出版社:</span>
+						<span class="sp2">${book.publish}</span>
 					</div>
 					<div class="book_sales">
-						<span class="sp1">销量:</span>
-						<span class="sp2">${book.sales}</span>
+						<span class="sp1">书架号:</span>
+						<span class="sp2">${book.num}</span>
 					</div>
 					<div class="book_amount">
-						<span class="sp1">库存:</span>
-						<span class="sp2">${book.stock}</span>
+						<span class="sp1">剩余:</span>
+						<span class="sp2">${book.stock}本</span>
 					</div>
 					<div class="book_add">
-						<button bookId="${book.id}" class="addToCart">加入购物车</button>
+						<button bookId="${book.id}" class="addToCart">加入借书单</button>
 					</div>
 				</div>
 			</div>
@@ -130,7 +135,7 @@
 		<%@include file="/pages/common/page_nav.jsp"%>
 
 	</div>
-	
+
 	<%@include file="/pages/common/footer.jsp"%>
 </body>
 </html>

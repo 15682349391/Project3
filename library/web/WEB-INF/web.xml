@@ -34,8 +34,9 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>BookServlet</servlet-name>
-        <url-pattern>/manager/bookServlet</url-pattern>
+        <url-pattern>/bookServlet</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>ClientServlet</servlet-name>
         <servlet-class>com.wangli.web.ClientServlet</servlet-class>
@@ -72,6 +73,7 @@
         <url-pattern>/orderServlet</url-pattern>
     </servlet-mapping>
 
+<!--
     <filter>
         <filter-name>ManagerFilter</filter-name>
         <filter-class>com.wangli.filter.ManagerFilter</filter-class>
@@ -89,7 +91,7 @@
     <filter-mapping>
         <filter-name>TransactionFilter</filter-name>
         <url-pattern>/*</url-pattern>
-    </filter-mapping>
+    </filter-mapping>-->
 
     <error-page>
         <error-code>500</error-code>

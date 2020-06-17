@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>订单管理</title>
+<title>书单管理</title>
 	<%--		静态包含base，css，js--%>
 	<%@include file="/pages/common/head.jsp"%>
 </head>
@@ -11,7 +11,7 @@
 
 	<div id="header">
 			<img class="logo_img" alt="" src="../../static/img/logo.gif" >
-			<span class="wel_word">订单管理系统</span>
+			<span class="wel_word">借书管理系统</span>
 		<%--管理菜单--%>
 		<%@include file="/pages/common/manager_menu.jsp"%>
 	</div>
@@ -20,30 +20,30 @@
 		<table>
 			<tr>
 				<td>日期</td>
-				<td>金额</td>
+				<td>用户名</td>
 				<td>详情</td>
-				<td>发货</td>
+				<td>操作</td>
 				
 			</tr>		
 			<tr>
-				<td>2015.04.23</td>
-				<td>90.00</td>
+				<td>2020.06.17</td>
+				<td>张三</td>
 				<td><a href="#">查看详情</a></td>
-				<td><a href="#">点击发货</a></td>
+				<td><a href="#">确认还书</a></td>
 			</tr>	
 			
 			<tr>
-				<td>2015.04.20</td>
-				<td>20.00</td>
+				<td>2020.06.10</td>
+				<td>李四</td>
 				<td><a href="#">查看详情</a></td>
-				<td>已发货</td>
+				<td>已还</td>
 			</tr>	
 			
 			<tr>
-				<td>2014.01.23</td>
-				<td>190.00</td>
+				<td>2020.06.11</td>
+				<td>小王</td>
 				<td><a href="#">查看详情</a></td>
-				<td>等待收货</td>
+				<td>已还</td>
 			</tr>		
 		</table>
 	</div>

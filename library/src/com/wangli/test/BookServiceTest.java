@@ -26,7 +26,7 @@ public class BookServiceTest {
 
     @Test
     public void addBook() {
-        bookService.addBook(new Book(null, "bookserviceTest", "laowang", new BigDecimal(78), 45, 21, null));
+        bookService.addBook(new Book(null, "bookserviceTest", "laowang","LAOWANG", "45", 21, null));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class BookServiceTest {
 
     @Test
     public void updateBook() {
-        bookService.updateBook(new Book(23, "updated", "laowang", new BigDecimal(11), 11, 22, null));
+        bookService.addBook(new Book(2, "bookserviceTest", "laowang","LAOWANG", "45", 21, null));
     }
 
     @Test

@@ -37,7 +37,7 @@ public class BookServlet extends BaseServlet {
         bookService.addBook(book);
 
         //req.getRequestDispatcher("/manager/bookServlet?action=list").forward(req, resp);
-        resp.sendRedirect(req.getContextPath()+"/manager/bookServlet?action=page&pageNo=" +pageNo);
+        resp.sendRedirect(req.getContextPath()+"/bookServlet?action=page&pageNo=" + req.getParameter("pageNo"));
 
     }
 
@@ -47,7 +47,7 @@ public class BookServlet extends BaseServlet {
 
         bookService.deleteBookById(id);
 
-        resp.sendRedirect(req.getContextPath()+"/manager/bookServlet?action=page&pageNo="+req.getParameter("pageNo"));
+        resp.sendRedirect(req.getContextPath()+"/bookServlet?action=page&pageNo="+req.getParameter("pageNo"));
 
     }
 
@@ -70,7 +70,7 @@ public class BookServlet extends BaseServlet {
 
         bookService.updateBook(book);
 
-        resp.sendRedirect(req.getContextPath()+"/manager/bookServlet?action=page&pageNo=" + req.getParameter("pageNo"));
+        resp.sendRedirect(req.getContextPath()+"/bookServlet?action=page&pageNo=" + req.getParameter("pageNo"));
 
     }
 
@@ -88,7 +88,7 @@ public class BookServlet extends BaseServlet {
         Integer pageSize = WebUtils.parseInt(req.getParameter("pageSize"), Page.PAGE_SIZE);
 
         Page<Book> page = bookService.page(pageNo,pageSize);
-        page.setUrl("manager/bookServlet?action=page");
+        page.setUrl("bookServlet?action=page");
 
         req.setAttribute("page", page);
 

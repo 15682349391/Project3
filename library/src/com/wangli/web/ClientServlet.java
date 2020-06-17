@@ -25,9 +25,9 @@ public class ClientServlet extends BaseServlet{
 
     BookService bookService = new BookServiceImpl();
 
-    protected void pageByPrice(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void pageByName(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println("经过了前台的pageByPrice");
+        System.out.println("经过了前台的pageByName");
 
         //处理分页
         Integer pageNo = WebUtils.parseInt(req.getParameter("pageNo"), 1);
@@ -39,7 +39,7 @@ public class ClientServlet extends BaseServlet{
         //自己的方法
         //page.setUrl("client/bookServlet?action=pageByPrice&min="+req.getParameter("min")+"&max="+req.getParameter("max"));
 
-        StringBuilder sb = new StringBuilder("client/bookServlet?action=pageByPrice");
+        StringBuilder sb = new StringBuilder("client/bookServlet?action=pageByName");
 
         if (req.getParameter("min") != null) {
             sb.append("&min=").append(req.getParameter("min"));

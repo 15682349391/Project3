@@ -31,10 +31,10 @@
 	<div id="main">
 		<table>
 			<tr>
-				<td>名称</td>
-				<td>价格</td>
+				<td>书名</td>
+				<td>出版社</td>
 				<td>作者</td>
-				<td>销量</td>
+				<td>书架号</td>
 				<td>库存</td>
 				<td colspan="2">操作</td>
 			</tr>		
@@ -42,13 +42,13 @@
 			<c:forEach items="${requestScope.page.item}" var="book">
 			<tr>
 				<td>${book.name}</td>
-				<td>${book.price}</td>
+				<td>${book.publish}</td>
 				<td>${book.author}</td>
-				<td>${book.sales}</td>
+				<td>${book.num}</td>
 				<td>${book.stock}</td>
 <%--方案一：添加method到域中判断跳转是add还是update		<td><a href="manager/bookServlet?action=getBook&id=${book.id}&method=update">修改</a></td>--%>
-				<td><a href="manager/bookServlet?action=getBook&id=${book.id}&pageNo=${requestScope.page.pageNo}">修改</a></td>
-				<td><a class="deleteClass" href="manager/bookServlet?action=delete&id=${book.id}&pageNo=${requestScope.page.pageNo}">删除</a></td>
+				<td><a href="bookServlet?action=getBook&id=${book.id}&pageNo=${requestScope.page.pageNo}">修改</a></td>
+				<td><a class="deleteClass" href="bookServlet?action=delete&id=${book.id}&pageNo=${requestScope.page.pageNo}">删除</a></td>
 			</tr>
 			</c:forEach>
 			<tr>

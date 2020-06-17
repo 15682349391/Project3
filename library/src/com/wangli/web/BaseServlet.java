@@ -38,7 +38,6 @@ public abstract class BaseServlet extends HttpServlet {
                 method.invoke(this,req,resp);
             } catch (Exception e) {
                 e.printStackTrace();
-                throw new RuntimeException(e);
             }
         } else {
             System.out.println("注意：指向的servlet的地址无action参数");

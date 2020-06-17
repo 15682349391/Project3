@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>我的订单</title>
+<title>我的书单</title>
 	<%--		静态包含base，css，js--%>
 	<%@include file="/pages/common/head.jsp"%>
 <style type="text/css">
@@ -34,14 +34,14 @@
 			<tr>
 				<td>2015.04.23</td>
 				<td>90.00</td>
-				<td>未发货</td>
+				<td>未还</td>
 				<td><a href="#">查看详情</a></td>
 			</tr>	
 			
 			<tr>
 				<td>2015.04.20</td>
 				<td>20.00</td>
-				<td>已发货</td>
+				<td>已还</td>
 				<td><a href="#">查看详情</a></td>
 			</tr>	
 			

@@ -29,8 +29,8 @@
 								<b></b>
 <%--								<span class="errorMsg">请输入用户名和密码</span>--%>
 								<span class="errorMsg">
-<%--									<%=request.getAttribute("msg")==null ? "请输入用户名和密码": request.getAttribute("msg")%>--%>
-									${ empty requestScope.username ? "请输入用户名和密码": requestScope.username}
+									<%=request.getAttribute("msg")==null ? "请输入用户名和密码": request.getAttribute("msg")%>
+									<%--${ empty requestScope.username ? "请输入用户名和密码": request.getAttribute("msg")}--%>
 								</span>
 							</div>
 							<div class="form">

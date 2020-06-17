@@ -32,7 +32,7 @@
 
 
 		<c:if test="${not empty sessionScope.orderId}">
-			<h1>你的订单已结算，借书号为${sessionScope.orderId}</h1>
+			<h1>你的借书单已提交，借书号为${sessionScope.orderId}</h1>
 		</c:if>
 
 	

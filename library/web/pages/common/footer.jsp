@@ -8,6 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div id="bottom">
 		<span>
-			图书借阅系统.Copyright &copy;2020
+			软件工程设计项目-图书借阅系统.
 		</span>
 </div>

@@ -23,7 +23,7 @@ public class BookDaoTest {
 
     @Test
     public void addBook() {
-        bookDao.addBook(new Book(null, "test", "test", new BigDecimal(999),12, 23, null));
+        bookDao.addBook(new Book(null, "test", "test", "laownag","aa12", 23, null));
     }
 
     @Test
@@ -33,7 +33,7 @@ public class BookDaoTest {
 
     @Test
     public void updateBook() {
-        bookDao.updateBook(new Book(22, "testupdate", "test", new BigDecimal(999),12, 23, null));
+        bookDao.addBook(new Book(2, "test", "test", "laownag","aa12", 23, null));
     }
 
     @Test

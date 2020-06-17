@@ -15,18 +15,18 @@ public class CartItem {
     private Integer id;
     private String name;
     private Integer count;
-    private BigDecimal price;
-    private BigDecimal totalPrice;
+    private String publish;
+    private String anthuer;
 
-    public CartItem() {
-    }
-
-    public CartItem(Integer id, String name, Integer count, BigDecimal price, BigDecimal totalPrice) {
-        this.id = id;
-        this.name = name;
-        this.count = count;
-        this.price = price;
-        this.totalPrice = totalPrice;
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", count=" + count +
+                ", publish='" + publish + '\'' +
+                ", anthuer='" + anthuer + '\'' +
+                '}';
     }
 
     public Integer getId() {
@@ -53,30 +53,30 @@ public class CartItem {
         this.count = count;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public String getPublish() {
+        return publish;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setPublish(String publish) {
+        this.publish = publish;
     }
 
-    public BigDecimal getTotalPrice() {
-        return totalPrice;
+    public String getAnthuer() {
+        return anthuer;
     }
 
-    public void setTotalPrice(BigDecimal totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setAnthuer(String anthuer) {
+        this.anthuer = anthuer;
     }
 
-    @Override
-    public String toString() {
-        return "CartItem{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", count=" + count +
-                ", price=" + price +
-                ", totalPrice=" + totalPrice +
-                '}';
+    public CartItem(Integer id, String name, Integer count, String publish, String anthuer) {
+        this.id = id;
+        this.name = name;
+        this.count = count;
+        this.publish = publish;
+        this.anthuer = anthuer;
+    }
+
+    public CartItem() {
     }
 }

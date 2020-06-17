@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>购物车</title>
+<title>借书单</title>
 	<%--		静态包含base，css，js--%>
 	<%@include file="/pages/common/head.jsp"%>
 	<script type="text/javascript">
@@ -14,7 +14,7 @@
 			})
 
 			$("#clear").click(function () {
-				return confirm("确定要清空购物车吗？");
+				return confirm("确定要清空借书单吗？");
 			})
 
 			$(".updateCount").change(function () {
@@ -37,7 +37,7 @@
 	
 	<div id="header">
 			<img class="logo_img" alt="" src="static/img/logo.gif" >
-			<span class="wel_word">购物车</span>
+			<span class="wel_word">加入借书单</span>
 		<%--			静态包含登陆成功--%>
 		<%@include file="/pages/common/login_sucess_menu.jsp"%>
 	</div>
@@ -65,15 +65,15 @@
 			</c:forEach>
 			<c:if test="${empty sessionScope.cart.items}">
 				<tr>
-					<td colspan="5">购物车空空如也。。。</td>
+					<td colspan="5">借书单空空如也。。。</td>
 				</tr>
 			</c:if>
 		</table>
 		<c:if test="${not empty sessionScope.cart.items}">
 			<div class="cart_info">
-				<span class="cart_span">购物车中共有<span class="b_count">${sessionScope.cart.totalCount}</span>件商品</span>
+				<span class="cart_span">借书单中共有<span class="b_count">${sessionScope.cart.totalCount}</span>件商品</span>
 				<span class="cart_span">总金额<span class="b_price">${sessionScope.cart.totalPrice}</span>元</span>
-				<span class="cart_span"><a id="clear" href="<%= scheme %>cartServlet?action=clear">清空购物车</a></span>
+				<span class="cart_span"><a id="clear" href="<%= scheme %>cartServlet?action=clear">清空书单</a></span>
 				<span class="cart_span"><a href="orderServlet?action=createOrder">去结账</a></span>
 			</div>
 		</c:if>
